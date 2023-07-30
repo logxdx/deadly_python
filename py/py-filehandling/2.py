@@ -1,0 +1,1 @@
+def arms(n):	s=0	temp=n	digits=len(str(n))	while temp>0:		d=temp%10		s=s+d**digits		temp=temp//10		if s==n:		print(n,"is an Armstrong number")	else:		print(n,"is not an Armstrong number")k=int(input("Enter the Number: "))arms(k)

@@ -1,0 +1,17 @@
+s='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+print(len(s))
+print(s.count('A'))
+print(s.find('C'))
+print(s.index('',27,40))
+print(s.isalnum())
+print(s.isalpha())
+print(s.isdigit())
+print(s.lower())
+print(s.islower())
+print(s.upper())
+print(s.isupper())
+a="    abcdefghijklmnopqrstuvwxyz    "
+print(a.lstrip())
+print(a.rstrip())
+print(a.strip())
+print(a.istitle())

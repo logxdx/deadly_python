@@ -1,0 +1,227 @@
+Mathematical Solver Documentation
+
+This is a Python program that implements a scientific calculator with additional functionalities such as a vector calculator, graphing calculator, and matrix calculator. The calculator provides a user-friendly interface for performing various mathematical operations.
+
+
+*Features*
+
+# Scientific Calculator
+
+Basic Mathematical Operations: The calculator supports basic mathematical operations such as addition, subtraction, multiplication, and division. Users can enter expressions using the operators +, -, *, and / to perform these operations.
+Trigonometric Functions: It supports all trigonometric functions including inverse, hyperbolic and inverse hyperbolic trigonometric functions. Users can enter expressions using the trigonometric functions sin, asin, sinh, and asinh followed by the angle in radians or degrees (see note).
+
+For example :
+sin(90d) --> 1.0
+cos(pi/2) --> 0.0
+
+
+
+Exponential and Logarithmic Functions: The calculator includes functions for exponentiation and logarithms, allowing calculations involving exponential growth/decay and logarithmic relationships. Users can use the exp function for exponentiation and the log function for logarithms.
+
+For example :
+To calculate the exponential function e raised to the power of x, enter exp(x) or e^x or e**x.
+To calculate the natural logarithm of x i.e. with base e, enter ln(x).
+To calculate the logarithm of x with base 10, enter log10(x).
+To calculate the logarithm of x with base 2, enter log2(x).
+
+
+
+Square Root and Power Functions: It provides functions for calculating square roots and raising numbers to specific powers. Users can use the sqrt function to calculate the square root of a number. The pow function can be used to raise a number to a specific power.
+
+For example :
+To calculate the square root of x, enter sqrt(x).
+To calculate x raised to the power of y, enter pow(x, y).
+
+
+
+Combination and Permutation: The calculator includes functions to calculate combinations and permutations of numbers. Users can use the C function to calculate combinations and the P function to calculate permutations.
+
+For example :
+To calculate the Combination of n items taken r at a time, enter C(n, r).
+To calculate the Permutation of n items taken r at a time, enter P(n, r).
+
+
+
+
+# Vector Calculator
+
+The Vector Calculator allows users to perform vector addition, subtraction, dot product, cross product and scalar and vector triple products. Users need to enter the components of the vectors in a comma-separated format.
+
+For example :
+To input a vector [1, 2, 3], enter `1, 2, 3`.
+
+If two vectors are given as input the following is computed :
+Addition, Subtraction, Dot product, Cross product
+
+If three vectors are given as input is computed :
+All of the above with the option to select two vectors for both dot and cross products
+
+Scalar triple product and Vector triple product
+The triple products are taken in order 
+i.e.
+vector1 * (vector2 x vector3)
+
+or
+
+vector1 x (vector2 x vector3)
+
+
+
+
+# Graphing Calculator
+
+The Graphing Calculator enables users to plot various functions, including polynomials, trigonometric functions, logarithmic functions, and exponential functions. Users can select the desired function type and enter the required parameters.
+
+
+Polynomial: Users can input the degree and coefficients of a polynomial function. For example, to plot a quadratic function with coefficients [1, -5, 6], enter the coefficients when asked for input in order and don't forget the zeros if present in coefficients.
+
+   === Graphing Calculator ===
+   Enter 'p' to plot a polynomial function
+   Enter 't' to plot a trigonometric function
+   Enter 'l' to plot a logarithmic function
+   Enter 'e' to plot an exponential function
+   Enter 'q' to quit
+
+   Enter operation (m for menu) : p
+   Enter the degree of the polynomial: 2
+   Enter the coefficient of x^2: 1
+   Enter the coefficient of x^1: -5
+   Enter the coefficient of x^0: 6
+   Enter the starting x value: 0
+   Enter the ending x value: 100
+   Enter the number of points to plot: 400
+
+
+
+Trigonometric: Users can input the type of trigonometric function (sine,cosine, tangent, cotangent, secant, or cosecant) along with other parameters. To plot a function, enter the values in order as asked for input.
+
+   === Graphing Calculator ===
+   Enter 'p' to plot a polynomial function
+   Enter 't' to plot a trigonometric function
+   Enter 'l' to plot a logarithmic function
+   Enter 'e' to plot an exponential function
+   Enter 'q' to quit
+
+   Enter operation (m for menu) : t
+   Enter 's' for sine, 'c' for cosine, 't' for tangent, 'cot' for cotangent, 
+   'sec' for secant, or 'cosec' for cosecant: s
+   Enter the amplitude: 1
+   Enter the frequency: 2*pi
+   Enter the phase shift (in radians): 30d
+   Enter the vertical shift: 1
+   Enter the starting x value: -10
+   Enter the ending x value: 10
+   Enter the number of points to plot: 1000
+
+
+
+Logarithmic: Users can input the base and parameters of a logarithmic function. To plot a logarithmic function  a∗logbase(b∗x)  with base=2, x multiplier b=2 and y multiplier a=2 i.e  2∗log2(2∗x) .
+
+   === Graphing Calculator ===
+   Enter 'p' to plot a polynomial function
+   Enter 't' to plot a trigonometric function
+   Enter 'l' to plot a logarithmic function
+   Enter 'e' to plot an exponential function
+   Enter 'q' to quit
+
+   Enter operation (m for menu) : l
+   Example:
+   ||a*(log(b*x))/(log(base))||
+   ||Base is greater than 0 and not equal to 1||
+   Enter the base of the logarithm (base): 2
+   Enter the coefficient (a): 2
+   Enter the multiplier coefficient (b): 2  
+   Enter the starting x value: -5
+   Enter the ending x value: 5
+   Enter the number of points to plot: 500
+
+
+
+Exponential: Users can input the base and parameters of an exponential function. For example, to plot an exponential function  a∗eb∗x  with base=2,y multiplier a=2 and x multiplier b=2 i.e  2∗e2∗x 
+
+   === Graphing Calculator ===
+   Enter 'p' to plot a polynomial function
+   Enter 't' to plot a trigonometric function
+   Enter 'l' to plot a logarithmic function
+   Enter 'e' to plot an exponential function
+   Enter 'q' to quit
+
+   Enter operation (m for menu) : e
+   Example:
+   ||a*((base)^(b*x))||
+   ||Base is greater than 0 and not equal to 1||
+   Enter the base of the exponential function (base): 2
+   Enter the coefficient (a): 2
+   Enter the multiplier coefficient (b): 2
+   Enter the starting x value: -1
+   Enter the ending x value: 1
+   Enter the number of points to plot: 500
+
+
+
+
+# Matrix Calculator
+The Matrix Calculator allows users to perform various matrix operations, including addition, subtraction, multiplication, and determinant calculation. Users need to enter the matrices in a row-wise comma-separated format.
+
+For example, to input a 2x2 matrix
+⎡⎣⎢147258369⎤⎦⎥  
+
+Enter 1, 2; 3, 4. Where rows are separated by  semi−colons  ; and columns of each row are separated by  commas  ,
+
+If two matrices are entered, addition, subtraction, multiplication, inverse, determinant, transpose, and their eigenvalues and eigenvectors are printed.
+If one matrix is given as input inverse, determinant, transpose, and their eigenvalues and eigenvectors are printed.
+
+
+
+
+##Usage
+
+Start the calculator program.
+Enter an expression to choose a specific calculator function.
+If required, enter the values or parameters necessary for the selected function.
+View the result displayed on the screen.
+Repeat steps 2-4 for additional calculations.
+Enter q to quit the specific calculator.
+Enter m for menu if available.
+
+##Example Usage
+Basic Mathematical Operations:
+
+Enter 2 + 3 to perform addition.
+Enter 5 - 2 to perform subtraction.
+Enter 4 * 6 to perform multiplication.
+Enter 10 / 2 to perform division.
+
+
+Trigonometric Functions:
+
+Enter sin(0.5) to calculate the sine of 0.5 radians.
+Enter cos(pi) to calculate the cosine of π radians.
+Enter atan(1) to calculate the arctangent of 1.
+
+
+Exponential and Logarithmic Functions:
+
+Enter exp(2) to calculate e^2.
+Enter log10(100) to calculate the logarithm of 100 with base 10.
+
+
+Square Root and Power Functions:
+
+Enter sqrt(16) to calculate the square root of 16.
+Enter pow(2, 3) to calculate 2 raised to the power of 3.
+
+
+Combination and Permutation:
+
+Enter C(5, 2) to calculate the combination of 5 items taken 2 at a time.
+Enter P(5, 2) to calculate the permutation of 5 items taken 2 at a time.
+
+
+
+
+Note
+For trigonometric functions, angles can be entered in radians or degrees. To enter an angle in degrees, append d after the angle value. For example, sin(90d) will calculate the sine of 90 degrees.
+The calculator uses standard mathematical order of operations. Parentheses can be used to specify the order of evaluation.
+Ensure proper syntax and correct parameter values when entering expressions or using specific calculator functions.
+This documentation provides an overview of the scientific calculator's features and usage. Feel free to explore and experiment with different functions and expressions to perform various mathematical calculations.
