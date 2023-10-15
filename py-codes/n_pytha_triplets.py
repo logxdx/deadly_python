@@ -1,7 +1,6 @@
-def pytrips(n):
+def pytrips(n, f):
     res=[]
     pad=5
-    f1=open(r"E:\OneDrive - IIT Delhi\CODE\Deadly_Python\Results\PythaTrips.txt","w+")
 
     for i in range(1,2000):
         for j in range(1,i):
@@ -12,12 +11,18 @@ def pytrips(n):
     
     if res==[]:
         print("No pythagorean triples with "+str(n))
+        res.append("No pythagorean triples with "+str(n))
     else:
-        print(*res)
+        # print(*res)
+        print(f"Pythagorean Triples with {n} : ", *res)
+        res.insert(0, f"Pythagorean Triples with {n} : ")
 
-    f1.writelines(res+['\n'])
-    f1.flush()
-    f1.close()
+    f.writelines(res+['\n'])
+    f.flush()
 
-for i in range(int(input())):
-    pytrips(i)
+f1=open(r"E:\CODE\Deadly_Python\Results\PythaTrips.txt","w+")
+k = int(input("Enter the range : "))
+for i in range(k+1):
+    pytrips(i, f1)
+
+f1.close()
