@@ -1,4 +1,6 @@
-import time, os
+# Optimised the linear_prime_search algorithm 😈😈
+
+import time, os, math
 
 MAX_SIZE = 10000001
 
@@ -10,44 +12,28 @@ MAX_SIZE = 10000001
 # count: stores the number of prime numbers in less than or equal to N
 isprime = [True] * MAX_SIZE
 prime = []
-SPF = [0] * MAX_SIZE
 count=0
 
 # Function generate all prime numbers less than N in O(n)
 def manipulated_seive(N):
-	global isprime, prime, SPF, count
+	global isprime, prime, count
 
 	# 0 and 1 are not prime
 	isprime[0] = isprime[1] = False
 
 	# Fill rest of the entries
-	for i in range(2, N+1):
-
+	for i in range(2, int(math.sqrt(N)) + 1):
 		# If isprime[i] is True then i is prime number
 		if isprime[i]:
 
-			prime.append(i)
-			count+=1
-
-			# A prime number is its own smallest prime factor
-			SPF[i] = i
-
-		# Remove all multiples of i*prime[j] which are
-		# not prime by making isprime[i*prime[j]] = False
-		# and put the smallest prime factor of i*Prime[j] as
-		# prime[j] [for example: let i = 5, j = 0, prime[j]
-		# = 2 [i*prime[j] = 10] so the smallest prime factor
-		# of '10' is '2' that is prime[j] this loop runs
-		# only one time for numbers which are not prime
-		
-		j = 0
-		while j < count and i * prime[j] <= N and prime[j] <= SPF[i]:
-			isprime[i * prime[j]] = False
-			
-			# put the smallest prime factor of i*prime[j]
-			SPF[i * prime[j]] = prime[j]
-
-			j += 1
+			# Remove all multiples of i which are
+			# not prime by making isprime[j] = False
+			# and put the smallest prime factor of j as i
+			# this loop runs only one time for numbers which are not prime
+			j = i*i
+			while j <= N:
+					isprime[j] = False		
+					j += i
 
 
 # Driver program to test above function
@@ -64,12 +50,14 @@ if __name__ == "__main__":
 	print()
 	print("Time taken :",end-start)
 
-	f1=open(r"E:\CODE\Deadly_Python\Results\linear_fast_Primes.txt","w+")
+	f1=open(r"E:\CODE\Deadly_Python\Results\not_optimised_fast_Primes.txt","w+")
 
 	for i in range(N+1):
 		# put all the prime numbers in prime[]
 		if isprime[i]:
+			prime.append(i)
 			f1.write(f'{i} \n')
+			count+=1
 
 	f1.write(f'\nTime Taken : {end-start} \n')
 	f1.flush()
