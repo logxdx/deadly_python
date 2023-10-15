@@ -14,7 +14,7 @@ from numpy.linalg import inv, det, solve, eig, svd, qr
 xyz = datetime.datetime.now()
 daate, taime = xyz.strftime("%x"), xyz.strftime("%X")
 
-directory = "E:\OneDrive - IIT Delhi\CODE\Deadly_Python\SOLVER\History.txt"
+directory = "E:\CODE\Deadly_Python\SOLVER\History.txt"
 f1=open(directory,"r+")
 
 x = sp.symbols('x')
@@ -73,7 +73,7 @@ def calculator(option,history):
 		print()
 		
 		while True:
-			expression = input("Enter expression : ")
+			expression = input("\nEnter expression : ")
 
 			if expression == 'q':
 				break
@@ -89,8 +89,8 @@ def calculator(option,history):
 				try:
 					output=parser_value(expression)
 				
-				except (SyntaxError, NameError, ZeroDivisionError):
-					output = ("Invalid expression")
+				except (SyntaxError, NameError, ZeroDivisionError) as e:
+					output = ("Invalid expression", e)
 				
 				except Exception as e:
 					output = ("Error:", e)
@@ -178,7 +178,7 @@ def calculator(option,history):
 
 		while True:
 			print()
-			operation = input("Enter operation (m for menu): ")
+			operation = input("\nEnter operation (m for menu): ")
 
 			if operation == 'q':
 				break
@@ -493,7 +493,7 @@ def calculator(option,history):
 
 		while True:
 			print()
-			operation = input("Enter operation (m for menu) : ")
+			operation = input("\nEnter operation (m for menu) : ")
 
 			if operation == 'q':
 				break
@@ -517,8 +517,11 @@ def calculator(option,history):
 				print("Error: Invalid operation")
 
 	def Ordinary_DE():
+
 		history.update({"ODE":{}})
 		clear_screen()
+
+
 		def menu():
 			print()
 			print("===Linear Ordinary Differential Equation Solver ===")
@@ -569,7 +572,7 @@ def calculator(option,history):
 				while True:
 					print()
 					print("Enter q to exit")
-					order = (input("Enter the order of the differential equation : "))
+					order = (input("\nEnter the order of the differential equation : "))
 					
 					if str(order) == 'q':
 						break				
@@ -636,7 +639,7 @@ def main():
 			if history == {}:
 				print("No History")
 			else:
-				end = ("\n"*5+"=========================\n"+"HISTORY "+str(daate)+" "+str(taime)+"\n******************************\nTHANK YOU FOR USING CALCULATOR")
+				end = ("\n"*3+"=========================\n"+"HISTORY "+str(daate)+" "+str(taime)+"\n******************************\nTHANK YOU FOR USING CALCULATOR")
 				
 				print(end)
 				f1.read()
